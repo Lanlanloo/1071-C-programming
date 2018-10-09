@@ -1,0 +1,11 @@
+#include<studio.h>
+
+int main(){
+	float h1,h2;
+	double BMI;
+	printf("Enter height(-1 to exit): :\n");
+	scanf("%d %d",&h1,&h2);
+	for(i=h1,i<=h2,i++){
+		weight=BMI*((high/100)*(high/100));
+	}
+}
