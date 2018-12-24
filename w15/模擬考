@@ -1,0 +1,128 @@
+1B程式語言期末模擬上機考     2018-12-18
+
+嚴禁作弊，違者考試0分，另扣總分20分，嚴重者送校處理。
+
+1.	(25%) 請畫出如下之九九乘法表，要用for迴圈來畫，不能只有printf()。
+Filename: p1_ID.cpp
+/* screen output */
+
+ 
+Coding by 1B-Name
+
+2.  (25%) 隨機產生100筆資料(0及1)，並顯示個別出現的次數及機率。
+   Filename: p2_ID.cpp
+/* screen output */
+Randomly generating 100 bit data
+0 1 0 1 1 0 1 1 0 1
+1 1 0 0 1 0 1 0 1 1
+0 1 1 1 0 1 1 1 0 1
+0 1 1 0 1 0 0 1 0 1
+1 0 0 1 1 1 0 1 1 0
+0 1 1 0 0 1 0 1 0 0
+1 1 0 0 1 0 1 0 1 1
+0 0 1 1 0 1 1 0 0 1
+0 1 0 1 1 1 0 0 1 1
+1 0 1 1 0 0 0 1 1 0
+
+Number(0) = 44  // 0 出現次數
+Number(1) = 56  // 1 出現次數
+Prob(0) = 0.44  // 0 出現機率
+Prob(1) = 0.56  // 1 出現機率
+Coding by 1B-Name
+
+3.	(10%) 結構及陣列 -- 亂數產生N筆資料，儲存至陣列Grade Grades[MAX]中，根據所給的 main()，產生所要的輸出。
+
+亂數產生範圍如下：
+studID: 402310000 ~ 402320000
+name: 請從下列10個人名中，亂數選取1個，
+char *names[] = {"Abel Chen", "Ben Lin", "Benny Pan", "John Hsu", "Jack Jian", "Tony Chung", "Hanry Xiao", "Jason Wang", "Jonson Wu", "Larry Tsai"}
+midterm: 50~100
+final: 50~100
+
+  Filename: p3_ID.cpp
+
+#define MAX 100
+struct Grade{
+   int studID;   // student ID
+   char *name;
+   int midterm;
+   int final;
+   float termGrade;  // termGrade = 0.5 * midterm + 0.5 * final;
+};
+
+/* main() 如非必要，請勿更動 */
+int main(){
+   int count = 0;
+   Grade grades[MAX];
+   int N;
+   printf(“Enter N: “);
+   scanf(“%d”, &N);
+   printf(“Generating %d grades ...\n\n”, %d);
+   for(int i=0;i<N;i++){
+     add(grades, i);
+count++;
+}	
+   computeTermGrade(grades,count);  // compute term grade
+   showGrades(grades,count);
+   return 0;
+}
+
+/* screen output */
+Enter N: 3
+Generating 3 grades ...
+id: 402310000, Name: Jim Smith, midterm: 90, final: 85, term grade: 87.5
+id: 402320000, Name: Amy Jill, midterm: 80, final: 70, term grade: 75.0
+id: 402330000, Name: Allen Adam, midterm: 88, final: 85, term grade: 86.5
+Coding by 1B-Name
+
+4. (10%) 結構及指標陣列 -- 亂數產生N筆資料，儲存至指標陣列 Grade *pGrades[MAX];，產生所要的輸出，亂數範圍如第3題。
+Filename: p4_ID.cpp
+---------------------------------------------------------
+5. (10%) 結構及串列 -- 亂數產生N筆資料，儲存至指標陣列 Grade *pGrades中，產生所要的輸出，亂數範圍如第3題。串列請用老師上課的串列demo來做。
+Filename: p5_ID.cpp
+---------------------------------------------------------
+6. (10%) 凱薩加密
+在西元前就存在的一種加密－凱薩加密為目前最早發現的替換加密 (substitution cipher)。其原理很簡單，將一段明文往替換成往後數的第 k 個英文字母。
+Filename: p6_ID.cpp
+
+若用數學式表示凱薩加密和解密，如下：
+加密 C=EK(P)=(P+k)mod26
+解密 P=DK(P)=(C−k)mod26
+例如 k=3 時，發生的情況如下：
+明文字母表：ABCDEFGHIJKLMNOPQRSTUVWXYZ
+密文字母表：DEFGHIJKLMNOPQRSTUVWXYZABC
+從數學的觀點來看，每一個字母就是一個數字。
+A = 0, B = 1, C = 2, …,X = 23, Y = 24, Z = 25
+Input                                                                 
+輸入兩行字串皆不超過26個字母，第一行輸入明文（為轉換前），第二行輸入密文（轉換後）。
+Output                                                                
+	輸出字母位移量。
+Sample Input                                                           
+ABCDEFGHIJKLMNOPQRSTUVWXYZ 
+DEFGHIJKLMNOPQRSTUVWXYZABC
+DLQXABXEEQMEUQYLZPEK
+YGLSVWSZZLHZPLTGUKZF
+Z
+Z
+Sample Output                                                         
+3
+21
+0
+---------------------------------------------------------
+
+7. (10%) 質數
+	質數（Prime number），指在大於1的自然數中，除了1和該數自身外，無法被其他自然數整除的數（也可定義為只有1與該數本身兩個正因數的數）。
+Filename: p7_ID.cpp
+
+輸入兩個數字a, b，輸出介於a b之間的所有質數，做法要寫下面兩個functions，說明如下：
+a.	寫一個函數int getPrime(int primes[])，事先找出1000以內的所有質數，先放於primes陣列中，primes陣列中值為1表示質數，0表示不是質數。
+b.	寫一個函數 findPrimes(primes, a,b)，會檢查primes內相對應的值，如果值為1，就印出來。
+Sample Input                                                           
+1 10
+30 100
+900 1000
+Sample Output                                                         
+2 3 5 7
+31 37 41 43 47 53 59 61 67 71 73 79 83 89 97
+907 911 919 929 937 941 947 953 967 971 977 983 991 997
+
