@@ -1,0 +1,202 @@
+#include <stdio.h>
+
+struct Data
+{
+    int day;
+    int time;
+};
+
+int main()
+{
+    Data data;
+
+    char *cla[15]= {"Computer Programming","Computer Programming(Asistant)","Calculator Conception","Calculator Conception(Asistant)","English","English(Asistant)","Calculus","Calculus(Asistant)","PE","University Learning","Discrete Mathematics","Physical","Natonal Defense","Service Learning"};
+    while(1)
+    {
+
+        int choice;
+        printf("1. Enter day time to search the object.\n");
+        printf("2. Enter the class to search the object.\n");
+        printf("3. Enter the classroom number to search the object.\n");
+        printf("4. Exit.\n");
+        printf("=>");
+        scanf("%d",&choice);
+        if(choice==4)
+            break;
+        switch(choice)
+        {
+        case 1:
+            printf("\nEnter day the form of day is |Mon=1 Tue=2 Wed=3 Thu=4 Fri=5| \n");
+            scanf("%d",&data.day);
+
+            printf("\nEnter time the form of time is |1610 910 1210 810 ...|\n");
+
+            scanf("%d",&data.time);
+
+            if(data.day==1)
+            {
+                if(data.time==1410)
+                {
+                    printf("\n%d %d is PE for two hour.\n\n",data.day,data.time);
+                }
+                else if(data.time==1610)
+                {
+                    printf("\n%d %d is Computer Programming for two hours.\n\n",data.day,data.time);
+                }
+            }
+            else if(data.day==2)
+            {
+                if(data.time=910)
+                {
+                    printf("\n%d %d is Calculator Conception for two hours.\n\n",data.day,data.time);
+                }
+                else if(data.time=1110)
+                {
+                    printf("\n%d %d is Discrete Mathematics for two hours.\n\n",data.day,data.time);
+                }
+                else if(data.time=1510)
+                {
+                    printf("\n%d %d is Computer Programming for two hours.\n\n",data.day,data.time);
+                }
+
+                else if(data.time=1710)
+                {
+                    printf("\n%d %d is Computer Programming(Asistant) for one hour.\n\n",data.day,data.time);
+                }
+            }
+            else if(data.day==3)
+            {
+                if(data.time=910)
+                {
+                    printf("\n%d %d is Calculator Conception for one hour.\n\n",data.day,data.time);
+                }
+                else if(data.time=1010)
+                {
+                    printf("\n%d %d is Calculator Conception(Asistant) for one hour.\n\n",data.day,data.time);
+                }
+                else if(data.time=1210)
+                {
+                    printf("\n%d %d is University Learning for one hour.\n\n",data.day,data.time);
+                }
+                else if(data.time=1510)
+                {
+                    printf("\n%d %d is Discrete Mathematics for two hours.\n\n",data.day,data.time);
+                }
+            }
+            else if(data.day==4)
+            {
+                if(data.time=910)
+                {
+                    printf("\n%d %d is Calculus for three hours.\n\n",data.day,data.time);
+                }
+                else if(data.time=1310)
+                {
+                    printf("\n%d %d is Physical for two hours.\n\n",data.day,data.time);
+                }
+                else if(data.time=1510)
+                {
+                    printf("\n%d %d is Calculus(Asistant) for two hours.\n\n",data.day,data.time);
+                }
+            }
+            else if(data.day==5
+                   )
+            {
+                if(data.time=810)
+                {
+                    printf("\n%d %d is English for two hours.\n\n",data.day,data.time);
+                }
+                else if(data.time=1010)
+                {
+                    printf("\n%d %d is Service Learning for two hours.\n\n",data.day,data.time);
+                }
+                else if(data.time=1310)
+                {
+                    printf("\n%d %d is National Defense for two hours.\n\n",data.day,data.time);
+                }
+                else if(data.time=1510)
+                {
+                    printf("\n%d %d is English(Asistant) for two hours.\n\n",data.day,data.time);
+                }
+            }
+        case 2:
+            for(int i=1; i<=11; i++)
+            {
+                for(int j=1; j<=83; j++)
+                {
+                    printf("-");
+                }
+                printf("\n");
+                if(i==1)
+                {
+                    printf("                |                |                |               |               \n");
+                    printf("                |                |                |               |      英文     \n");
+                    printf("                |                |                |               |               \n");
+                    }
+                    if(i==2)
+                {
+                    printf("                |                |                |               |               \n");
+                    printf("                |   計算機概論   |   計算機概論   |     微積分    |      英文     \n");
+                    printf("                |                |                |               |               \n");
+                }
+                if(i==3)
+                {
+                    printf("                |                |                |               |               \n");
+                    printf("                |   計算機概論   |   計算機概論   |     微積分    |   校園與社區  \n");
+                    printf("                |                |     (實習)     |               |    服務學習   \n");
+                }
+                if(i==4)
+                {
+                    printf("                |                |                |               |               \n");
+                    printf("                |    離散數學    |                |     微積分    |   校園與社區  \n");
+                    printf("                |                |                |               |    服務學習   \n");
+                }
+                if(i==5)
+                {
+                    printf("                |                |                |               |               \n");
+                    printf("                |    離散數學    |    大學學習    |               |               \n");
+                    printf("                |     (實習)     |                |               |               \n");
+                }
+                if(i==6)
+                {
+                    printf("                |                |                |               |               \n");
+                    printf("                |                |                |   普通物理    |    全民國防   \n");
+                    printf("                |                |                |               |  教育軍事訓練 \n");
+                }
+                if(i==7)
+                {
+                    printf("                |                |                |               |               \n");
+                    printf("   男、女體育   |                |                |   普通物理    |    全民國防   \n");
+                    printf("                |                |                |               |  教育軍事訓練 \n");
+                }
+                if(i==8)
+                {
+                    printf("                |                |                |               |               \n");
+                    printf("   男、女體育   |   計算機程式   |    離散數學    |    微積分     |     英文      \n");
+                    printf("                |       語言     |                |    (實習)     |    (實習)     \n");
+                }
+                if(i==9)
+                {
+                    printf("                |                |                |               |               \n");
+                    printf("   計算機程式   |   計算機程式   |    離散數學    |    微積分     |     英文      \n");
+                    printf("      語言      |       語言     |                |    (實習)     |    (實習)     \n");
+                }
+                if(i==10)
+                {
+                    printf("                |                |                |               |               \n");
+                    printf("   計算機程式   |   計算機程式   |                |               |               \n");
+                    printf("      語言      |       語言     |                |               |               \n");
+                }
+            }
+        }
+
+
+
+
+
+
+
+
+
+    }
+
+}
